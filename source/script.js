@@ -2,14 +2,40 @@
 var isWebCollect = (document.body.className.indexOf("web-collect") >= 0);
 var isAndroid = (document.body.className.indexOf("android-collect") >= 0);
 var isIOS = (document.body.className.indexOf("ios-collect") >= 0);
+var hash_parameter = getPluginParameter("hash");
 var ip_address ="";
+
+//Basic hash function to convert to 32bit integer
+function stringToHash(string) {
+
+    var hash = 0;
+
+    if (string.length == 0) return hash;
+
+    for (i = 0; i < string.length; i++) {
+        char = string.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+    }
+
+    return hash;
+};
 
 //Once ip field is captured, set the answer
 var finishedJsonLoad = function() {
-  //set answer to collected ip Address
-  setAnswer(ip_address);
+  //check whether the IP address should be hashed_ip
+  if(hash_parameter=="yes") {
+    //scramble the collected IP address
+    var hashed_ip = stringToHash(ip_address);
+    //set answer to collected ip Address
+    setAnswer(hashed_ip);
+  }
+  else {
+    //set answer to collected ip Address
+    setAnswer(ip_address);
+  }
   //go to next field once ip address is set
-  goToNextField();
+  //goToNextField();
 };
 
 
@@ -38,20 +64,3 @@ $.get("https://api.ipify.org", function(e) {
 function clearAnswer() {
     input.value = '';
 }
-
-// If the field is not marked readonly, then focus on the field and show the on-screen keyboard (for mobile devices)
-/*function setFocus() {
-    if(!fieldProperties.READONLY){
-        input.focus();
-        if (window.showSoftKeyboard) {
-            window.showSoftKeyboard();
-        }
-    }
-}*/
-
-//console.log("The IP Address is: " +);
-
-// Save the user's response (update the current answer)
-//input.oninput = function() {
-//    setAnswer(input.value);
-//}
