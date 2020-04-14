@@ -36,8 +36,9 @@ To create your own field plug-in using this as a template, follow these steps:
 ## Parameters
 The plug-in can take one parameter.
 
-|**Name**|**Description**|**Value**|
-|`hash`| This gives a 32-bit integer value instead of the actual IP address. Use this if you need to hide the IP address |`yes`|
+| **Name** | **Description** | **Value** |
+| --- | --- | --- |
+| `hash` | This gives a 32-bit integer value instead of the actual IP address. Use this if you need to hide the IP address | `yes` |
 
 Example usage can be as follows:
 
