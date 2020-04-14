@@ -35,7 +35,13 @@ To create your own field plug-in using this as a template, follow these steps:
 
 ## Parameters
 The plug-in can take one parameter.
-1. `hash` - when set to `yes`, this gives a 32-bit integer value instead of the actual IP address. Use this if you need to hide the IP address.
+|**Name**|**Description**|**Value**|
+|`hash`| This gives a 32-bit integer value instead of the actual IP address. Use this if you need to hide the IP address |`yes`|
+
+Example usage can be as follows:
+
+`custom-get-ip-address()` - to get the actual IP value
+`custom-get-ip-address(hash="yes")` - to get the hashed IP value
 
 ## More resources
 
