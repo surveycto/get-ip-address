@@ -1,7 +1,7 @@
 # Get IP Address
 
 # Description
-This a plugin that provides a readonly text to get the IP address for webforms. I will auto advance once the IP address has been captured.
+This a plugin that provides a readonly text to get the IP address for webforms. It will auto advance once the IP address has been captured.
 
 [![Download now](extras/download-button.png)](https://github.com/surveycto/get_ip_address/raw/master/get_ip_address.fieldplugin.zip)
 
