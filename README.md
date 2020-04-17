@@ -3,7 +3,7 @@
 # Description
 This a plugin that provides a readonly text to get the IP address for webforms. I will auto advance once the IP address has been captured.
 
-[![Download now](extras/download-button.png)](https://github.com/surveycto/get_ip_address/raw/master/get_ip_address.fieldplugin.zip)
+[![Download now](extras/download-button.png)](https://github.com/surveycto/get-ip-address/raw/master/get-ip-address.fieldplugin.zip)
 
 ## Default SurveyCTO feature support
 
@@ -20,7 +20,7 @@ This a plugin that provides a readonly text to get the IP address for webforms. 
 
 ## How to use
 
-**To use this field plug-in as-is**, just download the [get_ip_address.fieldplugin.zip](https://github.com/surveycto/get_ip_address/raw/master/get_ip_address.fieldplugin.zip) file from this repo, and attach it to your form.
+**To use this field plug-in as-is**, just download the [get-ip-address.fieldplugin.zip](https://github.com/surveycto/get_ip_address/raw/master/get-ip-address.fieldplugin.zip) file from this repo, and attach it to your form.
 
 To create your own field plug-in using this as a template, follow these steps:
 
