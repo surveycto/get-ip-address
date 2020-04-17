@@ -1,4 +1,4 @@
-# Get IP Address
+# Get IP address
 
 # Description
 This a plugin that provides a readonly text to get the IP address for webforms. I will auto advance once the IP address has been captured.
