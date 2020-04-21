@@ -2,19 +2,15 @@
 var hash_parameter = getPluginParameter("hash");
 var ip_address ="";
 
-//Basic hash function to convert to 32bit integer
+// This is a basic hash function to convert a string to 32bit integer.
 function stringToHash(string) {
-
   var hash = 0;
-
   if (string.length == 0) return hash;
-
   for (i = 0; i < string.length; i++) {
       char = string.charCodeAt(i);
       hash = ((hash << 5) - hash) + char;
       hash = hash & hash;
   }
-
   return hash;
 }
 
@@ -23,15 +19,10 @@ function unEntity(str){
   return str.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 }
 
-// Define what happens when the user attempts to clear the response
+// Define what happens when the user attempts to clear the response.
 function clearAnswer() {
   setAnswer();
 }
-
-////End global functions
-
-
-
 
 if (fieldProperties.LABEL) {
   document.querySelector(".label").innerHTML = unEntity(fieldProperties.LABEL);
@@ -40,26 +31,22 @@ if (fieldProperties.HINT) {
   document.querySelector(".hint").innerHTML = unEntity(fieldProperties.HINT);
 }
 
-//Once ip field is captured, set the answer
+// Once the IP address has been obtained, process the result.
 var finishedJsonLoad = function() {
-  //check whether the IP address should be hashed_ip
+  // Check whether the IP address should be hashed (based on the parameter).
   if(hash_parameter=="yes") {
-    //scramble the collected IP address
-    var hashed_ip = stringToHash(ip_address);
-    //set answer to hashed collected ip Address
-    setAnswer(hashed_ip);
+    var hashed_ip = stringToHash(ip_address); // Hash the collected IP address.
+    setAnswer(hashed_ip); // Store the hashed IP address as the field's response.
   }
   else {
-    //set answer to collected ip Address
-    setAnswer(ip_address);
+    setAnswer(ip_address); // Store the IP address as the field's response.
   }
-  //go to next field once ip address is set
-  goToNextField();
+  goToNextField(); // Go to next field once ip_address is set.
 };
 
-//use JQuery to get IP address ipify.org
+// Use JQuery to get IP address from ipify.org
 $.get("https://api.ipify.org", function(e) {
-  ip_address = e;//assign returned value to ip_address
-  $('#ip_value').text(ip_address);//display collected value to screen
-  finishedJsonLoad();// callback to access ip_address globally
+  ip_address = e; // Assign returned value to ip_address.
+  $('#ip_value').text(ip_address); // Display collected value to screen.
+  finishedJsonLoad(); // Callback to the function for processing the answer.
 });
