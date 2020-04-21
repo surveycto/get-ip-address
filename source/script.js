@@ -14,23 +14,6 @@ function stringToHash(string) {
   return hash;
 }
 
-// If the field label or hint contain any HTML that isn't in the form definition, then the < and > characters will have been replaced by their HTML character entities, and the HTML won't render. We need to turn those HTML entities back to actual < anmd > characters so that the HTML renders properly. This will allow you to render HTML from field references in your field label or hint.
-function unEntity(str){
-  return str.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-}
-
-// Define what happens when the user attempts to clear the response.
-function clearAnswer() {
-  setAnswer();
-}
-
-if (fieldProperties.LABEL) {
-  document.querySelector(".label").innerHTML = unEntity(fieldProperties.LABEL);
-}
-if (fieldProperties.HINT) {
-  document.querySelector(".hint").innerHTML = unEntity(fieldProperties.HINT);
-}
-
 // Define what happens once the IP address has been obtained.
 function finishedJsonLoad() {
   // Check whether the IP address should be hashed (based on the parameter).
@@ -49,3 +32,23 @@ $.get("https://api.ipify.org", function(e) {
   ip_address = e; // Assign returned value to ip_address.
   finishedJsonLoad(); // Once we have obtined the IP address, process the result.
 });
+
+
+//// Shown below is code that is not specific to this field plug-in. It contains general helpers and functions for handling fields in SurveyCTO Collect.
+
+// If the field label or hint contain any HTML that isn't in the form definition, then the < and > characters will have been replaced by their HTML character entities, and the HTML won't render. We need to turn those HTML entities back to actual < anmd > characters so that the HTML renders properly. This will allow you to render HTML from field references in your field label or hint.
+function unEntity(str){
+  return str.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+}
+
+// Define what happens when the user attempts to clear the response.
+function clearAnswer() {
+  setAnswer();
+}
+
+if (fieldProperties.LABEL) {
+  document.querySelector(".label").innerHTML = unEntity(fieldProperties.LABEL);
+}
+if (fieldProperties.HINT) {
+  document.querySelector(".hint").innerHTML = unEntity(fieldProperties.HINT);
+}
