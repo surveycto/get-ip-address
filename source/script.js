@@ -40,15 +40,14 @@ $.get("https://api.ipify.org", function(e) {
 function unEntity(str){
   return str.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 }
-
-// Define what happens when the user attempts to clear the response.
-function clearAnswer() {
-  setAnswer();
-}
-
 if (fieldProperties.LABEL) {
   document.querySelector(".label").innerHTML = unEntity(fieldProperties.LABEL);
 }
 if (fieldProperties.HINT) {
   document.querySelector(".hint").innerHTML = unEntity(fieldProperties.HINT);
+}
+
+// Define what happens when the user attempts to clear the response.
+function clearAnswer() {
+  setAnswer();
 }
