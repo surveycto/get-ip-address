@@ -1,3 +1,7 @@
+// Define global variables
+var hash_parameter = getPluginParameter("hash");
+var ip_address ="";
+
 //Basic hash function to convert to 32bit integer
 function stringToHash(string) {
 
@@ -27,8 +31,7 @@ function clearAnswer() {
 ////End global functions
 
 
-var hash_parameter = getPluginParameter("hash");
-var ip_address ="";
+
 
 if (fieldProperties.LABEL) {
   document.querySelector(".label").innerHTML = unEntity(fieldProperties.LABEL);
