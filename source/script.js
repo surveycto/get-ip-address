@@ -31,7 +31,7 @@ if (fieldProperties.HINT) {
   document.querySelector(".hint").innerHTML = unEntity(fieldProperties.HINT);
 }
 
-// Once the IP address has been obtained, process the result.
+// Define what happens once the IP address has been obtained.
 var finishedJsonLoad = function() {
   // Check whether the IP address should be hashed (based on the parameter).
   if(hash_parameter=="yes") {
@@ -47,5 +47,5 @@ var finishedJsonLoad = function() {
 // Use JQuery to get IP address from ipify.org
 $.get("https://api.ipify.org", function(e) {
   ip_address = e; // Assign returned value to ip_address.
-  finishedJsonLoad(); // Callback to the function for processing the answer.
+  finishedJsonLoad(); // Once we have obtined the IP address, process the result.
 });
