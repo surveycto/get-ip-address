@@ -32,7 +32,7 @@ if (fieldProperties.HINT) {
 }
 
 // Define what happens once the IP address has been obtained.
-var finishedJsonLoad = function() {
+function finishedJsonLoad() {
   // Check whether the IP address should be hashed (based on the parameter).
   if(hash_parameter=="yes") {
     var hashed_ip = stringToHash(ip_address); // Hash the collected IP address.
@@ -42,7 +42,7 @@ var finishedJsonLoad = function() {
     setAnswer(ip_address); // Store the IP address as the field's response.
   }
   goToNextField(); // Go to next field once ip_address is set.
-};
+}
 
 // Use JQuery to get IP address from ipify.org
 $.get("https://api.ipify.org", function(e) {
