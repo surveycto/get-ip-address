@@ -49,5 +49,5 @@ if (fieldProperties.HINT) {
 
 // Define what happens when the user attempts to clear the response.
 function clearAnswer() {
-  setAnswer();
+  setAnswer("");
 }
