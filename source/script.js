@@ -47,6 +47,5 @@ var finishedJsonLoad = function() {
 // Use JQuery to get IP address from ipify.org
 $.get("https://api.ipify.org", function(e) {
   ip_address = e; // Assign returned value to ip_address.
-  $('#ip_value').text(ip_address); // Display collected value to screen.
   finishedJsonLoad(); // Callback to the function for processing the answer.
 });
