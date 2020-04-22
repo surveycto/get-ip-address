@@ -1,5 +1,7 @@
 # Get IP address
 
+![get-ip-address field plug-in](extras/get-ip-address.jpg)
+
 ## Description
 
 This field plug-in obtains the IP address of the device being used to fill out a SurveyCTO form. Once the IP address has been obtained, the form will automatically advance to the next field. You have the option to save either the actual IP address, or a hashed version of it (for enhanced privacy). See the [Parameters section](#parameters) below.
