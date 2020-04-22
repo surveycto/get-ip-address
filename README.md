@@ -1,7 +1,10 @@
 # Get IP address
 
-# Description
-This a plugin that provides a readonly text to get the IP address for webforms. It will auto advance once the IP address has been captured.
+![get-ip-address field plug-in](extras/get-ip-address.jpg)
+
+## Description
+
+This field plug-in obtains the IP address of the device being used to fill out a SurveyCTO form. Once the IP address has been obtained, the form will automatically advance to the next field. You have the option to save either the actual IP address, or a hashed version of it (for enhanced privacy). See the [Parameters section](#parameters) below.
 
 [![Download now](extras/download-button.png)](https://github.com/surveycto/get-ip-address/raw/master/get-ip-address.fieldplugin.zip)
 
@@ -26,25 +29,21 @@ To create your own field plug-in using this as a template, follow these steps:
 
 1. Fork this repo
 1. Make changes to the files in the `source` directory.
-
     * **Note:** be sure to update the `manifest.json` file as well.
-
 1. Zip the updated contents of the `source` directory.
 1. Rename the .zip file to *yourpluginname*.fieldplugin.zip (replace *yourpluginname* with the name you want to use for your field plug-in).
 1. You may then attach your new .fieldplugin.zip file to your form as normal.
 
 ## Parameters
-The plug-in can take one parameter.
 
-| **Name** | **Description** | **Value** |
+| **Key** | **Value** |
 | --- | --- | --- |
-| `hash` | This gives a 32-bit integer value instead of the actual IP address. Use this if you need to hide the IP address | `yes` |
+| `hash` (optional) | Set this to `yes` to save a 32-bit integer value instead of the actual IP address. |
 
-Example usage can be as follows:
+> **Example:**  
+> In the online Form Designer, you can enter `hash="yes"` in the *Plug-in parameters* box. If you are editing this form using a spreadsheet, enter `custom-get-ip-address(hash="yes")` in the *appearance* column.
 
-`custom-get-ip-address()` - to get the actual IP value
-
-`custom-get-ip-address(hash="yes")` - to get the hashed IP value
+If no parameters are supplied, the actual IP address will be saved.
 
 ## More resources
 
