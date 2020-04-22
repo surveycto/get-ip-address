@@ -1,7 +1,7 @@
 {
 	"name" : "Get IP Address",
 	"author" : "Dobility",
-	"version": "1.0.22",
+	"version": "1.0.23",
 	"supportedFieldTypes": ["text"],
 	"externalJs":["jquery-3.4.1.min.js"],
 	"hideDefaultRequiredMessage": false,

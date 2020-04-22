@@ -16,6 +16,7 @@ function stringToHash(string) {
 
 // Define what happens once the IP address has been obtained.
 function finishedJsonLoad() {
+  $(".loading-container").hide(); // Hide the loading section.
   // Check whether the IP address should be hashed (based on the parameter).
   if(hash_parameter=="yes") {
     var hashed_ip = stringToHash(ip_address); // Hash the collected IP address.
