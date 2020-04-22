@@ -37,7 +37,7 @@ To create your own field plug-in using this as a template, follow these steps:
 ## Parameters
 
 | **Key** | **Value** |
-| --- | --- | --- |
+| --- | --- |
 | `hash` (optional) | Set this to `yes` to save a 32-bit integer value instead of the actual IP address. |
 
 > **Example:**  
