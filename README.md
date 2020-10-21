@@ -8,23 +8,14 @@ This field plug-in obtains the IP address of the device being used to fill out a
 
 [![Download now](extras/download-button.png)](https://github.com/surveycto/get-ip-address/raw/master/get-ip-address.fieldplugin.zip)
 
-## Default SurveyCTO feature support
+## Data format
 
-| Feature / Property | Support |
-| --- | --- |
-| Supported field type(s) | `text`|
-| Default values | No |
-| Custom constraint message | Yes |
-| Custom required message | Yes |
-| Read only | No |
-| media:image | Yes |
-| media:audio | Yes |
-| media:video | Yes |
+This field plug-in uses the `text` field type. The data is stored as you would expect from this field type without a field plug-in.
 
 ## How to use
 
 1. Download the test form [extras/sample-form](https://github.com/surveycto/get-ip-address/raw/master/extras/sample_form/get_ip_address_sample.xlsx) from this repo and upload it to your SurveyCTO server.
-1. Download the [table-list.fieldplugin.zip](https://github.com/surveycto/get-ip-address/raw/master/get-ip-address.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
+1. Download the [get-ip-address.fieldplugin.zip](https://github.com/surveycto/get-ip-address/raw/master/get-ip-address.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
 1. Make sure to provide the correct parameters (see below).
 
 ## Parameters
@@ -37,6 +28,19 @@ This field plug-in obtains the IP address of the device being used to fill out a
 > In the online Form Designer, you can enter `hash="yes"` in the *Plug-in parameters* box. If you are editing this form using a spreadsheet, enter `custom-get-ip-address(hash="yes")` in the *appearance* column.
 
 If no parameters are supplied, the actual IP address will be saved.
+
+### Default SurveyCTO feature support
+
+| Feature / Property | Support |
+| --- | --- |
+| Supported field type(s) | `text`|
+| Default values | No |
+| Custom constraint message | Yes |
+| Custom required message | Yes |
+| Read only | No |
+| media:image | Yes |
+| media:audio | Yes |
+| media:video | Yes |
 
 ## More resources
 
